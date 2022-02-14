@@ -1,0 +1,14 @@
+# This is the network config written by 'subiquity'
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens160:
+      addresses:      
+        - 10.0.5.12/24
+      gateway4: 10.0.5.2
+      nameservers:
+        search: [eric.local]
+        addresses:
+        - 10.0.5.5
+
