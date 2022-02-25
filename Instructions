@@ -1,0 +1,25 @@
+#CA
+#cd etc/pki/CA
+#touch index.txt
+#echo 1000 > serial
+#openssl genrsa -des3 -out private/cakey.pem 2048
+#openssl req -new -x509 -days 365 -key private/cakey.pem -out cacert.pem
+#
+#WEBSERVER
+#openssl req -newkey rsa:2048 -keyout websrv.key -out websrv.csr
+#scp websrv.csr user@ip:/tmp
+#
+#CA
+#cd /tmp
+#openssl ca -out websrv.crt -infiles websrv.csr
+#scp websrv.crt user@ip:/etc/pki/tls/certs
+#
+#SERVER
+#cp websrv.key /etc/pki/tls/private
+#yum -y install mod_ssl
+#vi /etc/httpd/conf.d/ssl.conf
+#Change the first prompts you see to websrv
+# add 443 to ports
+# freedom
+#
+#
