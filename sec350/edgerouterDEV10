@@ -13,8 +13,6 @@ set firewall name DMZ-to-WAN description 'allows connections back out the door'
 set firewall name DMZ-to-WAN enable-default-log
 set firewall name DMZ-to-WAN rule 1 action 'accept'
 set firewall name DMZ-to-WAN rule 1 state established 'enable'
-set firewall name DMZ-to-WAN rule 999 action 'accept'
-set firewall name DMZ-to-WAN rule 999 source address '172.16.50.3'
 set firewall name LAN-to-DMZ default-action 'drop'
 set firewall name LAN-to-DMZ enable-default-log
 set firewall name LAN-to-DMZ rule 1 action 'accept'
